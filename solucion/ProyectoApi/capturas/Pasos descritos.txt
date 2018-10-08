@@ -1,0 +1,39 @@
+1) https://developer.marvel.com/account  
+entrar a ese link para ver la clave publica y privada
+
+2) http://7thspace.com/webmaster_tools/online_md5_encoder.html
+entrar a ese link para convertir a un dato encryptado el hash
+
+3) en la actividad dicen esto:
+Si ts = 3, llave privada = abcd y llave pública = 1234; la cadena a codificar sería: 3abcd1234. Una vez codificada esta cadena, el valor obtenido corresponde al valor hash que usaremos en próximas instrucciones.
+
+entonces el orden correcto es simplemente colocar los codigos pegados por 
+el valor que quiero de listado de datos de ts es:
+
+3
+
+ejemplo mi codigo de private key es:  
+
+6f0454d85b5256d3a5e85110e7cec0eb73c98b92
+
+ejemplo mi codigo de private publica es:  
+
+c091a130660af295e40a29b772966165
+
+entonces todo esos se deben pegar en uno solo para que sera el codigo a encryptar en la pagina po
+
+36f0454d85b5256d3a5e85110e7cec0eb73c98b92c091a130660af295e40a29b772966165
+
+luego ese codigo se copia y pega en esta pagina:
+http://7thspace.com/webmaster_tools/online_md5_encoder.html,  y presionas el boton Encode String y automaticamente se encrypta el dato y devuelve un hash
+
+que seria el que vamos a usar en el api que esta dentro del proyecto de  solucion que es este link:
+
+var url = "http://gateway.marvel.com/v1/public/characters?ts=EL VALOR DE TS ELEGIDO&apikey=EL VALOR DE TU LLAVE PÚBLICA&hash=EL VALOR DEL HASH OBTENIDO";
+
+entonces siguiendo los pasos de ese link se debe colocar los campos en este caso quedaria:
+
+  var url = "http://gateway.marvel.com/v1/public/characters?ts=3&apikey=c091a130660af295e40a29b772966165&hash=4a87c4b92fa2f9ee8ef31b6ea59a00f1";
+
+Y listo ya funcionaria en la pagina: solo escribes el texto SPIDER-MAN y va a aparecer como en las capturas
+
